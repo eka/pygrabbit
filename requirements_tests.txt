@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest
+vcrpy>=1.4.2
