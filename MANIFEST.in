@@ -1,0 +1,3 @@
+include *.py *.txt *.rst 
+recursive-include pygrabbit *
+recursive-include tests *

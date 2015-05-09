@@ -1,5 +1,4 @@
-from urllib.parse import urljoin
-
+from ._compat import *
 import requests
 from lxml import html
 
