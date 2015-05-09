@@ -1,3 +1,2 @@
-pyquery>=1.2.9
 lxml>=3.4.4
 requests>=2.7.0
