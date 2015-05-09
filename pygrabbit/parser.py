@@ -1,4 +1,3 @@
-import urllib
 from urllib.parse import urljoin
 
 import requests
@@ -15,15 +14,11 @@ class PyGrabbit:
 
     def __init__(self, url):
         self.url = url
-        self._images = []
-        self._title = None
-        self._description = None
-        self._content = None
         self._tree = None
         try:
             res = requests.get(url, headers=headers)
-            self.content = res.text
-            self._tree = html.fromstring(self.content)
+            self._content = res.text
+            self._tree = html.fromstring(self._content)
         except requests.ConnectionError:
             pass
 
