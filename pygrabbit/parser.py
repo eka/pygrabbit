@@ -28,7 +28,7 @@ class PyGrabbit:
     def title(self):
         res = None
 
-        if self._tree:
+        if self._tree is not None:
             res = self._tree.xpath("//meta[@property='og:title']/@content")
             # TODO: DRY
             if res:
@@ -49,7 +49,7 @@ class PyGrabbit:
     @property
     def description(self):
         res = None
-        if self._tree:
+        if self._tree is not None:
             res = self._tree.xpath("//meta[@property='og:description']/@content")
             if res:
                 res = res[0].strip()
@@ -64,7 +64,7 @@ class PyGrabbit:
     def images(self):
         res = []
 
-        if self._tree:
+        if self._tree is not None:
             og = self._tree.xpath('//meta[@property="og:image"]/@content')
 
             twitter = self._tree.xpath('//meta[@name="twitter:image:src"]/@content')
