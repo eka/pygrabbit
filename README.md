@@ -12,18 +12,14 @@ Add this line to your application's Gemfile:
 
 ## Usage
 
-    In [1]: from pygrabbit import PyGrabbit
-    
-    In [2]: g = PyGrabbit.url('http://www.redditpics.com/psbattle-olympic-shot-put,173917')
-    
-    In [3]: g.images
-    Out[3]: ['http://walnutcreekcrossfit.com/wp-content/uploads/2012/10/ashton-eaton-shot-put3.jpg']
-    
-    In [4]: g.title
-    Out[4]: 'PsBattle: Olympic Shot Put'
-    
-    In [5]: g.description
-    Out[5]: 'A tribute to reddit'
+    >>> from pygrabbit import PyGrabbit
+    >>> g = PyGrabbit.url('http://www.redditpics.com/psbattle-olympic-shot-put,173917')
+    >>> g.images
+    ['http://walnutcreekcrossfit.com/wp-content/uploads/2012/10/ashton-eaton-shot-put3.jpg']
+    >>> g.title
+    'PsBattle: Olympic Shot Put'
+    >>> g.description
+    'A tribute to reddit'
 
 ## Note
 
