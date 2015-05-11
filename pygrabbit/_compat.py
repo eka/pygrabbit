@@ -1,6 +1,6 @@
-import six
+import sys
 
-if six.PY2:
-    from urlparse import urljoin
-if six.PY3:
+try:
     from urllib.parse import urljoin
+except:
+    from urlparse import urljoin

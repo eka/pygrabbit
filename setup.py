@@ -12,12 +12,11 @@ def get_requirements(filename='requirements.txt'):
     return [l for l in lines if l and not l.startswith('#')]
 
 setup(name='pygrabbit',
-      version='0.1',
-      description='PyGrabbit is a simple URL scraper based on the Ruby Grabbit',
-      long_description="""PyGrabbit is a simple URL scraper.
-      It returns the best image (or several images) that represents the content
-      on a given web page. Grabbit also returns a title, and a description for the page.
-      It was inspired by the Ruby version https://github.com/rlarcombe/grabbit""",
+      version='0.2',
+      description='PyGrabbit is a simple URL scraper that will try to get the best image given the web page.',
+      long_description="""From the entrails of 'Skynet' comes PyGrabbit, a very clever bastard that will not stop at anything to fulfill its purpose.
+
+PyGrabbit is a simple URL scrapper inspired by the Ruby Grabbit https://github.com/rlarcombe/grabbit. It will try to return the best image(s) that represent the content on a given web page or not.""",
       url='http://github.com/eka/pygrabbit',
       author='Esteban (Eka) Feldman',
       author_email='esteban.feldman@gmail.com',
