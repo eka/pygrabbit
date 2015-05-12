@@ -6,7 +6,7 @@ PyGrabbit is a simple URL scrapper inspired by the Ruby Grabbit https://github.c
 
 ## Installation
 
-Add this line to your application's Gemfile:
+With pip
 
     pip install pygrabbit
 
