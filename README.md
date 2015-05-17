@@ -13,7 +13,7 @@ With pip
 ## Usage
 
     >>> from pygrabbit import PyGrabbit
-    >>> g = PyGrabbit.url('http://www.redditpics.com/psbattle-olympic-shot-put,173917')
+    >>> g = PyGrabbit('http://www.redditpics.com/psbattle-olympic-shot-put,173917')
     >>> g.images
     ['http://walnutcreekcrossfit.com/wp-content/uploads/2012/10/ashton-eaton-shot-put3.jpg']
     >>> g.title
