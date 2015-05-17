@@ -26,13 +26,13 @@ class PyGrabbit:
     @cached_attribute
     def title(self):
         text = self.select(
-            "//meta[@property='og:title']/@content",
-            "//meta[@name='twitter:title']/@content",
+            '//meta[@property="og:title"]/@content',
+            '//meta[@name="twitter:title"]/@content',
             )
         if text:
             return text[0].strip()
 
-        res = self.select("//title")
+        res = self.select('//title')
         if res:
             res = res[0].text.strip()
             return res
@@ -40,8 +40,8 @@ class PyGrabbit:
     @cached_attribute
     def description(self):
         text = self.select(
-            "//meta[@property='og:description']/@content",
-            "//meta[@name='description']/@content",
+            '//meta[@property="og:description"]/@content',
+            '//meta[@name="description"]/@content',
             )
         if text:
             return text[0].strip()
@@ -52,8 +52,8 @@ class PyGrabbit:
             '//meta[@property="og:image"]/@content',
             '//meta[@name="twitter:image:src"]/@content',
             '//img[@id="main-image" or @id="prodImage"]/@src',
-            "//img[not(ancestor::*[contains(@id, 'sidebar') or contains(@id, 'comment') or contains(@id, 'footer') or contains(@id, 'header')]) and ancestor::*[contains(@id, 'content')]]/@src",
-            "//img[not(ancestor::*[contains(@id, 'sidebar') or contains(@id, 'comment') or contains(@id, 'footer') or contains(@id, 'header')])]/@src",
-            "//img/@src",
+            '//img[not(ancestor::*[contains(@id, "sidebar") or contains(@id, "comment") or contains(@id, "footer") or contains(@id, "header")]) and ancestor::*[contains(@id, "content")]]/@src',
+            '//img[not(ancestor::*[contains(@id, "sidebar") or contains(@id, "comment") or contains(@id, "footer") or contains(@id, "header")])]/@src',
+            '//img/@src',
             )
         return [self._image_absolute_uri(k) for k in nodes]
