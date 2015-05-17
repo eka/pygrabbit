@@ -1,6 +1,7 @@
-from ._compat import urljoin
 import requests
 from lxml import html
+from ._compat import urljoin
+from .helpers import cached_attribute
 
 
 class PyGrabbit:
@@ -22,7 +23,7 @@ class PyGrabbit:
                 return node
         return []
 
-    @property
+    @cached_attribute
     def title(self):
         text = self.select(
             "//meta[@property='og:title']/@content",
@@ -36,7 +37,7 @@ class PyGrabbit:
             res = res[0].text.strip()
             return res
 
-    @property
+    @cached_attribute
     def description(self):
         text = self.select(
             "//meta[@property='og:description']/@content",
@@ -45,7 +46,7 @@ class PyGrabbit:
         if text:
             return text[0].strip()
 
-    @property
+    @cached_attribute
     def images(self):
         nodes = self.select(
             '//meta[@property="og:image"]/@content',
