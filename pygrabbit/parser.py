@@ -28,14 +28,10 @@ class PyGrabbit:
         text = self.select(
             '//meta[@property="og:title"]/@content',
             '//meta[@name="twitter:title"]/@content',
+            '//title/text()',
             )
         if text:
             return text[0].strip()
-
-        res = self.select('//title')
-        if res:
-            res = res[0].text.strip()
-            return res
 
     @cached_attribute
     def description(self):
