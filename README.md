@@ -1,8 +1,12 @@
 # PyGrabbit
 
-From the entrails of 'Skynet' comes PyGrabbit, a very clever bastard that will not stop at anything to fulfill its purpose.
+From the entrails of 'Skynet' comes PyGrabbit, a very clever bastard
+that will not stop at anything to fulfill its purpose.
 
-PyGrabbit is a simple URL scrapper inspired by the Ruby Grabbit https://github.com/rlarcombe/grabbit. It will try to return the best image(s) that represent the content on a given web page or not.
+PyGrabbit is a simple URL scrapper inspired by the Ruby Grabbit
+https://github.com/rlarcombe/grabbit. It will try to return the
+best image(s) that represent the content on a given web page or
+not.
 
 ## Installation
 
@@ -23,7 +27,9 @@ With pip
 
 ## Note
 
-PyGrabbit is under heavy development... not. But it's very green indeed and in alpha stage, many things will be improved, so use it at you own peril.
+PyGrabbit is under heavy development... not. But it's very green
+indeed and in alpha stage, many things will be improved, so use
+it at your own peril.
 
 ## Contributing
 
