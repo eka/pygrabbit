@@ -1,7 +1,7 @@
 import requests
 from lxml import html
 from ._compat import urljoin
-from .helpers import cached_attribute
+from ._helpers import cached_attribute
 
 
 class PyGrabbit:
