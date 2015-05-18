@@ -2,8 +2,10 @@ import io
 import os
 from setuptools import setup
 
+
 def get_path(*args):
     return os.path.join(os.path.dirname(__file__), *args)
+
 
 def get_requirements(filename='requirements.txt'):
     with io.open(get_path(filename), 'rt', encoding='utf8') as fd:
@@ -11,8 +13,11 @@ def get_requirements(filename='requirements.txt'):
         lines = map(lambda s: s.strip(), data.splitlines())
     return [l for l in lines if l and not l.startswith('#')]
 
+
+version = __import__('pygrabbit').__version__
+
 setup(name='pygrabbit',
-      version='0.2.1',
+      version=version,
       description='PyGrabbit is a simple URL scraper that will try to get the best image given the web page.',
       long_description="""From the entrails of 'Skynet' comes PyGrabbit, a very clever bastard that will not stop at anything to fulfill its purpose.
 
