@@ -1,6 +1,4 @@
-import sys
-
 try:
     from urllib.parse import urljoin
-except:
+except ImportError:
     from urlparse import urljoin
