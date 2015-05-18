@@ -8,7 +8,7 @@ def grab():
     @vcr.use_cassette('fixtures/vcr_cassettes/pygrabbit.yaml',
                       record_mode='new_episodes')
     def make_grabbit(url):
-        return PyGrabbit(url)
+        return PyGrabbit.url(url)
     return make_grabbit
 
 

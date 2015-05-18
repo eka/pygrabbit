@@ -13,6 +13,11 @@ class PyGrabbit:
         self._content = requests.get(url, headers=self.headers).text
         self._tree = html.fromstring(self._content)
 
+    @classmethod
+    def url(cls, url):
+        g = cls(url)
+        return g
+
     def _image_absolute_uri(self, image_path):
         return urljoin(self.url, image_path)
 
@@ -29,7 +34,7 @@ class PyGrabbit:
             '//meta[@property="og:title"]/@content',
             '//meta[@name="twitter:title"]/@content',
             '//title/text()',
-            )
+        )
         if text:
             return text[0].strip()
 
@@ -38,7 +43,7 @@ class PyGrabbit:
         text = self.select(
             '//meta[@property="og:description"]/@content',
             '//meta[@name="description"]/@content',
-            )
+        )
         if text:
             return text[0].strip()
 
@@ -51,5 +56,5 @@ class PyGrabbit:
             '//img[not(ancestor::*[contains(@id, "sidebar") or contains(@id, "comment") or contains(@id, "footer") or contains(@id, "header")]) and ancestor::*[contains(@id, "content")]]/@src',
             '//img[not(ancestor::*[contains(@id, "sidebar") or contains(@id, "comment") or contains(@id, "footer") or contains(@id, "header")])]/@src',
             '//img/@src',
-            )
+        )
         return [self._image_absolute_uri(k) for k in nodes]
