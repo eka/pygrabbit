@@ -76,8 +76,8 @@ class TestPyGrabbitImages:
 
     @vcr.use_cassette('fixtures/vcr_cassettes/pygrabbit.yaml', record_mode='new_episodes')
     def test_return_images_from_twitter_card(self):
-        g = PyGrabbit.url("http://momwitha.com/2013/08/having-fun-with-pictures-at-google-headquarters/")
-        assert g.images[0] == "http://momwitha.com/wp-content/uploads/2013/08/Rita-in-Google-Phonebooth1.jpg"
+        g = PyGrabbit.url("https://dev.twitter.com/cards/types/summary-large-image")
+        assert g.images[0] == "https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3.png"
         assert len(g.images) == 1
 
     # NOTE: Amazon html is a bitch

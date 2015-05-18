@@ -67,7 +67,7 @@ class PyGrabbit:
         if self._tree is not None:
             og = self._tree.xpath('//meta[@property="og:image"]/@content')
 
-            twitter = self._tree.xpath('//meta[@name="twitter:image:src"]/@content')
+            twitter = self._tree.xpath('//meta[@name="twitter:image"]/@content')
 
             main = self._tree.xpath('//img[@id="main-image" or @id="prodImage"]/@src')
 
